@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Users x Interactions with Brands Chart</title>
+	<meta name="author" content="Bruno Lopes dos Santos">
+	
+    <script src="js/jquery.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/ui-bootstrap-tpls.min.js"></script>
+	<script src="js/script.js"></script>
+    <script src="js/angular-chart.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+
+<body ng-app="app">
+	<div ng-controller="jsonServerBox">
+		<div class="page-header">
+			<h1>Users x Interactions with Brands</h1>
+			</div>
+			<div class="col-md-4">
+			<div class="panel panel-success">
+			<div class="panel-heading">Select a brand:</div>
+			<div class="panel-body">
+			<select ng-options="brand.name for brand in brands track by brand.id"
+				ng-change="updateChart()" ng-model="selectedBrand">
+			</select>
+			</div>
+			</div>
+		</div>
+			<canvas id="bar" class="chart chart-bar" data="data" labels="labels"></canvas>
+  </div>
+</body>
+
+</html>
